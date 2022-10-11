@@ -98,6 +98,11 @@ main {
     line-height: 17.5px;
 }
 
+.check-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .option-price {
     font-size: 16px;
     line-height: 19px;
@@ -131,4 +136,8 @@ button:disabled {
     background-color: #cbcbcb;
     color: #ffffff;
     font-size: 20px;
+}
+
+.selected {
+    border: 5px solid #32b72f
 }
