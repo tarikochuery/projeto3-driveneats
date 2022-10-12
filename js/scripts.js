@@ -31,13 +31,19 @@ const enableOrderButton = () => {
 const makeOrder = () => {
     if (orderButton.classList.contains('disabled')) return
 
+    const clientName = prompt('Qual seu nome?')
+    const clientAdress = prompt('Qual seu endereço?')
+
     console.log('cheguei aqui')
 
     const ORDER_TEXT = `Olá, gostaria de fazer o seguinte pedido:
     - Prato: ${order.dishes.name}
     - Bebida: ${order.beverages.name}
     - Sobremesa: ${order.desserts.name}
-    Total: R$ ${(order.beverages.value + order.desserts.value + order.dishes.value).toFixed(2)}`
+    Total: R$ ${(order.beverages.value + order.desserts.value + order.dishes.value).toFixed(2)}
+    
+    Nome: ${clientName}
+    Endereço: ${clientAdress}`
 
     const orderURIEncoded = encodeURIComponent(ORDER_TEXT)
 
