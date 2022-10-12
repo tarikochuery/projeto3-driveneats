@@ -131,12 +131,19 @@ button {
     text-align: center;
     height: 61px;
     width: 100%;
+    
+    font-size: 20px;
+    color: #ffffff;
 }
 
-button:disabled {
+.enabled {
+    background-color: #32b72f;
+    cursor: pointer;
+}
+
+.disabled {
     background-color: #cbcbcb;
-    color: #ffffff;
-    font-size: 20px;
+    cursor: not-allowed;
 }
 
 .selected {

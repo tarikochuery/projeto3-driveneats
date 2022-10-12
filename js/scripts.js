@@ -23,6 +23,14 @@ const order = {
     }
 }
 
+const enableOrderButton = () => {
+    console.log('entrei aqui')
+    const orderButton = document.getElementById('order-button')
+    orderButton.classList.toggle('disabled')
+    orderButton.classList.toggle('enabled')
+    orderButton.innerHTML = 'Fechar pedido'
+}
+
 const addProductInformationToOrder = (element) => {
     order[element.parentElement.id].name = element.querySelector('.option-name').innerHTML
     order[element.parentElement.id].value = Number(element.querySelector('.option-price').innerHTML.split('R$ ')[1].replace(',', '.'))
@@ -58,6 +66,10 @@ const selectOption = (element) => {
     element.classList.add('selected')
     addCheckMarker(element)
     addProductInformationToOrder(element)
+
+    if (order.dishes.value && order.desserts.value && order.beverages.value) {
+        enableOrderButton()
+    }
 }
 
 dishesArray.forEach(card => card.addEventListener('click', () => selectOption(card)))
