@@ -1,10 +1,33 @@
 const dishes = document.getElementById('dishes')
 const beverages = document.getElementById('beverages')
-const deserts = document.getElementById('deserts')
+const desserts = document.getElementById('desserts')
 
 const dishesArray = Array.from(dishes.children)
 const beveragesArray = Array.from(beverages.children)
-const desertsArray = Array.from(deserts.children)
+const dessertsArray = Array.from(desserts.children)
+
+console.log(Number(dessertsArray[0].querySelector('.option-price').innerHTML.split('R$ ')[1].replace(',', '.')))
+
+const order = {
+    dishes: {
+        name:'',
+        value: 0
+    },
+    beverages: {
+        name: '',
+        value: 0
+    },
+    desserts: {
+        name: '',
+        value: 0
+    }
+}
+
+const addProductInformationToOrder = (element) => {
+    order[element.parentElement.id].name = element.querySelector('.option-name').innerHTML
+    order[element.parentElement.id].value = Number(element.querySelector('.option-price').innerHTML.split('R$ ')[1].replace(',', '.'))
+    console.log(order)
+}
 
 const createCheckMarker = () =>  {
     const CHECK_MARKER_DIRECTORY = './assets/green-check.svg'
@@ -27,7 +50,6 @@ const removeCheckMarker = (element) => {
 const selectOption = (element) => {
 
     const section = element.parentElement
-    console.log(section)
     Array.from(section.children).forEach(card => {
         card.classList.remove('selected')
         removeCheckMarker(card)
@@ -35,8 +57,9 @@ const selectOption = (element) => {
 
     element.classList.add('selected')
     addCheckMarker(element)
+    addProductInformationToOrder(element)
 }
 
 dishesArray.forEach(card => card.addEventListener('click', () => selectOption(card)))
 beveragesArray.forEach(card => card.addEventListener('click', () => selectOption(card)))
-desertsArray.forEach(card => card.addEventListener('click', () => selectOption(card)))
+dessertsArray.forEach(card => card.addEventListener('click', () => selectOption(card)))

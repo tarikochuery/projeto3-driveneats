@@ -45,6 +45,7 @@ header h4 {
 
 main {
     margin-top: 92px;
+    margin-bottom: 92px;
     width: 100%;
     background-color: #eeeeee;
     padding: 31px 0 16px 19px;
@@ -108,7 +109,7 @@ main {
     line-height: 19px;
 }
 
-footer {
+.footer {
     background-color: #ffffff;
     padding: 15px 25px 16px;
 
