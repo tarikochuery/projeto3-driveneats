@@ -151,7 +151,7 @@ button {
 }
 
 .modal-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -165,7 +165,7 @@ button {
 
 .modal {
     width: 377px;
-    height: 353px;
+    
     background-color: #50d074;
     color: #ffffff;
     border-radius: 9px;
@@ -198,6 +198,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.item p:first-child {
+    width: 50%;
 }
 
 .total {
