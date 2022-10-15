@@ -48,8 +48,8 @@ const toggleModal = () => {
 }
 
 const enableOrderButton = () => {
-    orderButton.classList.toggle('disabled')
-    orderButton.classList.toggle('enabled')
+    if(orderButton.classList.contains('enabled')) return
+    orderButton.classList.add('enabled')
     orderButton.innerHTML = 'Fechar pedido'
 }
 

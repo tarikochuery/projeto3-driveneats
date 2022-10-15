@@ -134,16 +134,13 @@ button {
     
     font-size: 20px;
     color: #ffffff;
+    background-color: #cbcbcb;
+    cursor: not-allowed;
 }
 
 .enabled {
     background-color: #32b72f;
     cursor: pointer;
-}
-
-.disabled {
-    background-color: #cbcbcb;
-    cursor: not-allowed;
 }
 
 .selected {
